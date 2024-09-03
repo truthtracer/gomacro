@@ -10,27 +10,6 @@ import (
 	r "reflect"
 )
 
-/**
- * Declare and fill a global variable Packages, whose type is compatible
- * with the global variable github.com/truthtracer/gomacro/imports.Packages
- *
- * If you want to automatically register this package's declarations into
- *   github.com/truthtracer/gomacro/imports.Packages
- * to let gomacro know about this package, and allow importing it without compiling
- * a plugin, you can add the following to some _other_ file in this directory:
- *
- * import "github.com/truthtracer/gomacro/imports"
- *
- * func init() {
- *     for k, v := range Packages {
- *         imports.Packages[k] = v
- *     }
- * }
- *
- * Such code is _not_ automatically added to this file, because it would introduce
- * a dependency on gomacro packages, which may be undesiderable.
- */
-
 // reflection: allow interpreted code to import "github.com/go-rod/rod"
 func init() {
 	Packages["github.com/go-rod/rod"] = Package{
