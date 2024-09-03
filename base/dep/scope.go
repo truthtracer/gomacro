@@ -23,9 +23,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/cosmos72/gomacro/base/output"
+	"github.com/truthtracer/gomacro/base/output"
 
-	"github.com/cosmos72/gomacro/ast2"
+	"github.com/truthtracer/gomacro/ast2"
 )
 
 func (s *Scope) Ast(form ast2.Ast) []string {

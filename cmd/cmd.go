@@ -24,13 +24,13 @@ import (
 	"os"
 	"strings"
 
-	. "github.com/cosmos72/gomacro/base"
-	"github.com/cosmos72/gomacro/base/genimport"
-	"github.com/cosmos72/gomacro/base/inspect"
-	"github.com/cosmos72/gomacro/base/paths"
-	"github.com/cosmos72/gomacro/fast"
-	"github.com/cosmos72/gomacro/fast/debug"
-	"github.com/cosmos72/gomacro/go/etoken"
+	. "github.com/truthtracer/gomacro/base"
+	"github.com/truthtracer/gomacro/base/genimport"
+	"github.com/truthtracer/gomacro/base/inspect"
+	"github.com/truthtracer/gomacro/base/paths"
+	"github.com/truthtracer/gomacro/fast"
+	"github.com/truthtracer/gomacro/fast/debug"
+	"github.com/truthtracer/gomacro/go/etoken"
 )
 
 type Cmd struct {
@@ -50,6 +50,7 @@ func (cmd *Cmd) Init() {
 	etoken.GENERICS = etoken.GENERICS_V2_CTI
 
 	ir := fast.New()
+	ir.SetBuildArgs([]string{"-gcflags=all=-N -l"})
 	ir.SetDebugger(&debug.Debugger{})
 	ir.SetInspector(&inspect.Inspector{})
 

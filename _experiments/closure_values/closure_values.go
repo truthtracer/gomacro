@@ -19,7 +19,7 @@ package closure_values
 import (
 	r "reflect"
 
-	"github.com/cosmos72/gomacro/base"
+	"github.com/truthtracer/gomacro/base"
 )
 
 type Env struct {
@@ -331,17 +331,17 @@ func CallInt(fun X, args ...X) XInt {
 var typeOfInt = r.TypeOf(int(0))
 
 /*
-  interpreted version of:
+	  interpreted version of:
 
-	func collatz(n int) {
-		for n > 1 {
-			if n&1 != 0 {
-				n = ((n * 3) + 1) / 2
-			} else {
-				n = n / 2
+		func collatz(n int) {
+			for n > 1 {
+				if n&1 != 0 {
+					n = ((n * 3) + 1) / 2
+				} else {
+					n = n / 2
+				}
 			}
 		}
-	}
 */
 func DeclCollatz(env *Env, idx int) FuncInt {
 	const (
@@ -375,15 +375,15 @@ func DeclCollatz(env *Env, idx int) FuncInt {
 }
 
 /*
-  interpreted version of:
+	  interpreted version of:
 
-	func sum(n int) int {
-		total := 0
-		for i := 1; i <= n; i++ {
-			total += i
+		func sum(n int) int {
+			total := 0
+			for i := 1; i <= n; i++ {
+				total += i
+			}
+			return total
 		}
-		return total
-	}
 */
 func DeclSum(env *Env, idx int) FuncInt {
 	const (
@@ -408,14 +408,14 @@ func DeclSum(env *Env, idx int) FuncInt {
 }
 
 /*
-  interpreted version of:
+	  interpreted version of:
 
-	func fibonacci(n int) int {
-		if (n <= 2) {
-			return 1
+		func fibonacci(n int) int {
+			if (n <= 2) {
+				return 1
+			}
+			return fibonacci(n-1) + fibonacci(n-2)
 		}
-		return fibonacci(n-1) + fibonacci(n-2)
-	}
 */
 func DeclFibonacci(env *Env, idx int) FuncInt {
 	const (

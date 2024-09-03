@@ -11,13 +11,12 @@ import (
 	"go/ast"
 	"go/token"
 
-	etoken "github.com/cosmos72/gomacro/go/etoken"
+	etoken "github.com/truthtracer/gomacro/go/etoken"
 )
 
 // A Mode value is a set of flags (or 0).
 // They control the amount of source code parsed and other optional
 // parser functionality.
-//
 type Mode uint
 
 const (

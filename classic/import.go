@@ -21,10 +21,10 @@ import (
 	r "reflect"
 	"strings"
 
-	"github.com/cosmos72/gomacro/base/genimport"
+	"github.com/truthtracer/gomacro/base/genimport"
 
-	"github.com/cosmos72/gomacro/base"
-	bstrings "github.com/cosmos72/gomacro/base/strings"
+	"github.com/truthtracer/gomacro/base"
+	bstrings "github.com/truthtracer/gomacro/base/strings"
 )
 
 type PackageName = genimport.PackageName

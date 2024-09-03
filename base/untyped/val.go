@@ -24,7 +24,7 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/cosmos72/gomacro/base/output"
+	"github.com/truthtracer/gomacro/base/output"
 )
 
 // untyped value

@@ -21,13 +21,13 @@ import (
 	"testing"
 	"unsafe"
 
-	"github.com/cosmos72/gomacro/_experiments/bytecode_interfaces"
-	"github.com/cosmos72/gomacro/_experiments/bytecode_values"
-	"github.com/cosmos72/gomacro/_experiments/closure_interfaces"
-	"github.com/cosmos72/gomacro/_experiments/closure_ints"
-	"github.com/cosmos72/gomacro/_experiments/closure_maps"
-	"github.com/cosmos72/gomacro/_experiments/closure_values"
-	"github.com/cosmos72/gomacro/_experiments/jit"
+	"github.com/truthtracer/gomacro/_experiments/bytecode_interfaces"
+	"github.com/truthtracer/gomacro/_experiments/bytecode_values"
+	"github.com/truthtracer/gomacro/_experiments/closure_interfaces"
+	"github.com/truthtracer/gomacro/_experiments/closure_ints"
+	"github.com/truthtracer/gomacro/_experiments/closure_maps"
+	"github.com/truthtracer/gomacro/_experiments/closure_values"
+	"github.com/truthtracer/gomacro/_experiments/jit"
 )
 
 func arithJitEmulate(uenv *uint64) {

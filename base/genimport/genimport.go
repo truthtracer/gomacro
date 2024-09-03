@@ -27,9 +27,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/cosmos72/gomacro/base/output"
-	"github.com/cosmos72/gomacro/base/paths"
-	"github.com/cosmos72/gomacro/base/untyped"
+	"github.com/truthtracer/gomacro/base/output"
+	"github.com/truthtracer/gomacro/base/paths"
+	"github.com/truthtracer/gomacro/base/untyped"
 )
 
 type Output = output.Output
@@ -52,14 +52,14 @@ var inceptionFileDeclarations = []byte(`
 
 /**
  * Declare and fill a global variable Packages, whose type is compatible
- * with the global variable github.com/cosmos72/gomacro/imports.Packages
+ * with the global variable github.com/truthtracer/gomacro/imports.Packages
  *
  * If you want to automatically register this package's declarations into
- *   github.com/cosmos72/gomacro/imports.Packages
+ *   github.com/truthtracer/gomacro/imports.Packages
  * to let gomacro know about this package, and allow importing it without compiling
  * a plugin, you can add the following to some _other_ file in this directory:
  *
- * import "github.com/cosmos72/gomacro/imports"
+ * import "github.com/truthtracer/gomacro/imports"
  *
  * func init() {
  *     for k, v := range Packages {

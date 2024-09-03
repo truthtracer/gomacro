@@ -25,7 +25,7 @@ import (
 	"os"
 	"sort"
 
-	"github.com/cosmos72/gomacro/base/output"
+	"github.com/truthtracer/gomacro/base/output"
 )
 
 // ===================== Decl =====================

@@ -19,10 +19,10 @@ package fast
 import (
 	"go/constant"
 
-	"github.com/cosmos72/gomacro/base/output"
-	"github.com/cosmos72/gomacro/base/reflect"
-	"github.com/cosmos72/gomacro/base/untyped"
-	xr "github.com/cosmos72/gomacro/xreflect"
+	"github.com/truthtracer/gomacro/base/output"
+	"github.com/truthtracer/gomacro/base/reflect"
+	"github.com/truthtracer/gomacro/base/untyped"
+	xr "github.com/truthtracer/gomacro/xreflect"
 )
 
 func (c *Comp) litValue(value I) Lit {

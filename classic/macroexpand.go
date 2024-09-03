@@ -20,9 +20,9 @@ import (
 	"go/ast"
 	r "reflect"
 
-	. "github.com/cosmos72/gomacro/ast2"
-	. "github.com/cosmos72/gomacro/base"
-	etoken "github.com/cosmos72/gomacro/go/etoken"
+	. "github.com/truthtracer/gomacro/ast2"
+	. "github.com/truthtracer/gomacro/base"
+	etoken "github.com/truthtracer/gomacro/go/etoken"
 )
 
 type macroExpandCtx struct {
@@ -176,7 +176,6 @@ func (env *Env) MacroExpand1(in ast.Node) (out ast.Node, expanded bool) {
 	return out, expanded
 }
 
-//
 func (env *Env) extractMacroCall(form Ast) Macro {
 	form = UnwrapTrivialAst(form)
 	switch form := form.(type) {

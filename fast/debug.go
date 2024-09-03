@@ -20,7 +20,7 @@ import (
 	"go/ast"
 	"go/token"
 
-	"github.com/cosmos72/gomacro/base"
+	"github.com/truthtracer/gomacro/base"
 )
 
 type stubDebugger struct{}

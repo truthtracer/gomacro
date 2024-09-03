@@ -1,3 +1,8 @@
+changelist:
+1. feat: add policies for import packages (allow/deny/...)
+2. feat: add build args of building plugin
+3. feat: add some thirdparty pkgs (anyone can remove them if they don't need)
+
 ## gomacro - interactive Go interpreter and debugger with generics and macros
 
 gomacro is an almost complete Go interpreter, implemented in pure Go. It offers both
@@ -52,7 +57,7 @@ Gomacro can be used as:
 	import (
 		"fmt"
 		"reflect"
-		"github.com/cosmos72/gomacro/fast"
+		"github.com/truthtracer/gomacro/fast"
 	)
 	func RunGomacro(toeval string) reflect.Value {
 		interp := fast.New()
@@ -64,7 +69,7 @@ Gomacro can be used as:
 		fmt.Println(RunGomacro("1+1"))
 	}
 	```
-  Also, [github issue #13](https://github.com/cosmos72/gomacro/issues/13) explains
+  Also, [github issue #13](https://github.com/truthtracer/gomacro/issues/13) explains
   how to have your application's functions, variable, constants and types
   available in the interpreter.
 
@@ -93,7 +98,7 @@ Gomacro can be used as:
   and call any other function or library: they can even read and write files,
   open network connections, etc... as a normal Go function can do.
 
-  See [doc/code_generation.pdf](https://github.com/cosmos72/gomacro/blob/master/doc/code_generation.pdf)
+  See [doc/code_generation.pdf](https://github.com/truthtracer/gomacro/blob/master/doc/code_generation.pdf)
   for an introduction to the topic.
 
 ## Installation
@@ -117,7 +122,7 @@ The following combinations are tested and known to work:
 
   The command
   ```
-  go install github.com/cosmos72/gomacro@latest
+  go install github.com/truthtracer/gomacro@latest
   ```
   downloads, compiles and installs gomacro and its dependencies
 
@@ -151,7 +156,7 @@ Compared to compiled Go, gomacro supports several extensions:
 * an integrated debugger, see [Debugger](#debugger)
 
 * configurable special commands. Type `:help` at REPL to list them,
-  and see [cmd.go:37](https://github.com/cosmos72/gomacro/blob/master/fast/cmd.go#L37)
+  and see [cmd.go:37](https://github.com/truthtracer/gomacro/blob/master/fast/cmd.go#L37)
   for the documentation and API to define new ones.
 
 * untyped constants can be manipulated directly at REPL. Examples:
@@ -190,7 +195,7 @@ Compared to compiled Go, gomacro supports several extensions:
   returns the zero value of the type
 
 * macros, quoting and quasiquoting: see
-  [doc/code_generation.pdf](https://github.com/cosmos72/gomacro/blob/master/doc/code_generation.pdf)
+  [doc/code_generation.pdf](https://github.com/truthtracer/gomacro/blob/master/doc/code_generation.pdf)
 
 and slightly relaxed checks:
 
@@ -299,13 +304,13 @@ $ gomacro
 [greeting message...]
 
 gomacro> import "gonum.org/v1/plot"
-// warning: created file "/home/max/go/src/github.com/cosmos72/gomacro/imports/thirdparty/gonum_org_v1_plot.go", recompile gomacro to use it
+// warning: created file "/home/max/go/src/github.com/truthtracer/gomacro/imports/thirdparty/gonum_org_v1_plot.go", recompile gomacro to use it
 ```
 
 Now quit gomacro, recompile and reinstall it:
 ```
 gomacro> :quit
-$ go install github.com/cosmos72/gomacro
+$ go install github.com/truthtracer/gomacro
 ```
 
 Finally restart it. Your import is now linked **inside** gomacro and will work:
@@ -542,7 +547,7 @@ This makes them very well suited (although arguably a bit low level)
 for both purposes: code generation and C++-like templates, which
 are a special case of code generation - for a demonstration of how
 to implement C++-like templates on top of Lisp-like macros,
-see for example the project https://github.com/cosmos72/cl-parametric-types
+see for example the project https://github.com/truthtracer/cl-parametric-types
 from the same author.
 
 Building a Go interpreter that supports Lisp-like macros,

@@ -21,10 +21,10 @@ import (
 	"go/constant"
 	"go/token"
 
-	"github.com/cosmos72/gomacro/base/reflect"
-	"github.com/cosmos72/gomacro/base/untyped"
-	etoken "github.com/cosmos72/gomacro/go/etoken"
-	xr "github.com/cosmos72/gomacro/xreflect"
+	"github.com/truthtracer/gomacro/base/reflect"
+	"github.com/truthtracer/gomacro/base/untyped"
+	etoken "github.com/truthtracer/gomacro/go/etoken"
+	xr "github.com/truthtracer/gomacro/xreflect"
 )
 
 func (c *Comp) BinaryExpr(node *ast.BinaryExpr) *Expr {

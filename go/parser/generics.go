@@ -13,14 +13,13 @@
 // treated like an ordinary parameter list and thus may contain multiple
 // entries where the spec permits exactly one. Consequently, the corresponding
 // field in the AST (ast.FuncDecl.Recv) field is not restricted to one entry.
-//
 package parser
 
 import (
 	"go/ast"
 	"go/token"
 
-	etoken "github.com/cosmos72/gomacro/go/etoken"
+	etoken "github.com/truthtracer/gomacro/go/etoken"
 )
 
 // enable C++-style generics?

@@ -19,8 +19,8 @@ package fast
 import (
 	r "reflect"
 
-	. "github.com/cosmos72/gomacro/base"
-	"github.com/cosmos72/gomacro/base/reflect"
+	. "github.com/truthtracer/gomacro/base"
+	"github.com/truthtracer/gomacro/base/reflect"
 )
 
 :package fast

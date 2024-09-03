@@ -19,11 +19,11 @@ package base
 import (
 	r "reflect"
 
-	"github.com/cosmos72/gomacro/base/genimport"
-	"github.com/cosmos72/gomacro/base/reflect"
+	"github.com/truthtracer/gomacro/base/genimport"
+	"github.com/truthtracer/gomacro/base/reflect"
 )
 
-// the following constants must match with github.com/cosmos72/gomacro/xreflect/gensym.go
+// the following constants must match with github.com/truthtracer/gomacro/xreflect/gensym.go
 const (
 	StrGensymInterface string = "\U0001202A" // name of extra struct field needed by the interpreter when creating interface proxies
 	StrGensymPrivate   string = "\U00012038" // prefix to generate names for unexported struct fields

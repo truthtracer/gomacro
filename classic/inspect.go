@@ -19,7 +19,7 @@ package classic
 import (
 	r "reflect"
 
-	. "github.com/cosmos72/gomacro/base"
+	. "github.com/truthtracer/gomacro/base"
 )
 
 func (env *Env) Inspect(str string) {

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// This file converts objects from go/types to github.com/cosmos72/go/types
+// This file converts objects from go/types to github.com/truthtracer/go/types
 
 package types
 
@@ -46,7 +46,7 @@ func (c *Converter) Init(universe *Scope) {
 	}
 }
 
-// convert *go/types.Package -> *github.com/cosmos72/gomacro/go/types.Package
+// convert *go/types.Package -> *github.com/truthtracer/gomacro/go/types.Package
 func (c *Converter) Package(g *types.Package) *Package {
 	if g == nil {
 		return nil
@@ -75,7 +75,7 @@ func (c *Converter) Package(g *types.Package) *Package {
 	return p
 }
 
-// convert go/types.Object -> github.com/cosmos72/gomacro/go/types.Object
+// convert go/types.Object -> github.com/truthtracer/gomacro/go/types.Object
 func (c *Converter) object(g types.Object) (ret Object) {
 	defer func() {
 		if ret == nil {
@@ -98,17 +98,17 @@ func (c *Converter) object(g types.Object) (ret Object) {
 	return ret
 }
 
-// convert *go/types.Const -> *github.com/cosmos72/gomacro/go/types.Const
+// convert *go/types.Const -> *github.com/truthtracer/gomacro/go/types.Const
 func (c *Converter) constant(g *types.Const) *Const {
 	return NewConst(g.Pos(), c.mkpackage(g.Pkg()), g.Name(), c.typ(g.Type()), g.Val())
 }
 
-// convert *go/types.Func -> *github.com/cosmos72/gomacro/go/types.Func
+// convert *go/types.Func -> *github.com/truthtracer/gomacro/go/types.Func
 func (c *Converter) function(g *types.Func) *Func {
 	return NewFunc(g.Pos(), c.mkpackage(g.Pkg()), g.Name(), c.typ(g.Type()).(*Signature))
 }
 
-// convert *go/types.TypeName -> *github.com/cosmos72/gomacro/go/types.TypeName
+// convert *go/types.TypeName -> *github.com/truthtracer/gomacro/go/types.TypeName
 func (c *Converter) typename(g *types.TypeName) *TypeName {
 	ret, _ := c.mktypename(g)
 	if ret.typ == nil {
@@ -117,7 +117,7 @@ func (c *Converter) typename(g *types.TypeName) *TypeName {
 	return ret
 }
 
-// convert *go/types.Var -> *github.com/cosmos72/gomacro/go/types.Var
+// convert *go/types.Var -> *github.com/truthtracer/gomacro/go/types.Var
 func (c *Converter) variable(g *types.Var) *Var {
 	return NewVar(g.Pos(), c.mkpackage(g.Pkg()), g.Name(), c.typ(g.Type()))
 }

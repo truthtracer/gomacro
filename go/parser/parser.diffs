@@ -10,8 +10,8 @@
  	"strings"
  	"unicode"
 +
-+	"github.com/cosmos72/gomacro/scanner"
-+	mt "github.com/cosmos72/gomacro/token"
++	"github.com/truthtracer/gomacro/scanner"
++	mt "github.com/truthtracer/gomacro/token"
  )
  
  // The parser structure holds the parser's internal state.

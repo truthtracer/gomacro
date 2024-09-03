@@ -22,10 +22,10 @@ import (
 	"math/big"
 	r "reflect"
 
-	"github.com/cosmos72/gomacro/base/output"
-	"github.com/cosmos72/gomacro/base/reflect"
-	"github.com/cosmos72/gomacro/base/strings"
-	xr "github.com/cosmos72/gomacro/xreflect"
+	"github.com/truthtracer/gomacro/base/output"
+	"github.com/truthtracer/gomacro/base/reflect"
+	"github.com/truthtracer/gomacro/base/strings"
+	xr "github.com/truthtracer/gomacro/xreflect"
 )
 
 var (

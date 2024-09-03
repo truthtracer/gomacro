@@ -21,9 +21,9 @@ import (
 	"go/ast"
 	"go/token"
 
-	"github.com/cosmos72/gomacro/base"
-	"github.com/cosmos72/gomacro/base/output"
-	xr "github.com/cosmos72/gomacro/xreflect"
+	"github.com/truthtracer/gomacro/base"
+	"github.com/truthtracer/gomacro/base/output"
+	xr "github.com/truthtracer/gomacro/xreflect"
 )
 
 // a generic type declaration.

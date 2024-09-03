@@ -22,8 +22,8 @@ import (
 	"go/token"
 	r "reflect"
 
-	. "github.com/cosmos72/gomacro/base"
-	etoken "github.com/cosmos72/gomacro/go/etoken"
+	. "github.com/truthtracer/gomacro/base"
+	etoken "github.com/truthtracer/gomacro/go/etoken"
 )
 
 func (env *Env) unsupportedUnaryExpr(xv r.Value, op token.Token) (r.Value, []r.Value) {

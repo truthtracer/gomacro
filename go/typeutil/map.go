@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/cosmos72/gomacro/go/types"
+	"github.com/truthtracer/gomacro/go/types"
 )
 
 // Map is a hash-table-based mapping from types (types.Type) to
@@ -23,7 +23,6 @@ import (
 // Just as with map[K]V, a nil *Map is a valid, read-only empty map.
 //
 // Not thread-safe.
-//
 type Map struct {
 	hasher Hasher             // shared by many Maps
 	table  map[uint32][]entry // maps hash to bucket; entry.key==nil means unused
@@ -56,7 +55,6 @@ type entry struct {
 //
 // If SetHasher is not called, the Map will create a private hasher at
 // the first call to Insert.
-//
 func (m *Map) SetHasher(hasher Hasher) {
 	m.hasher = hasher
 }
@@ -88,7 +86,6 @@ func (m *Map) Hasher() Hasher {
 
 // Delete removes the entry with the given key, if any.
 // It returns true if the entry was found.
-//
 func (m *Map) Delete(key types.Type) bool {
 	if m != nil && m.table != nil {
 		hash := m.hasher.Hash(key)
@@ -108,7 +105,6 @@ func (m *Map) Delete(key types.Type) bool {
 
 // At returns the map entry for the given key.
 // The result is nil if the entry is not present.
-//
 func (m *Map) At(key types.Type) interface{} {
 	if m != nil && m.table != nil {
 		for _, e := range m.table[m.hasher.Hash(key)] {
@@ -169,7 +165,6 @@ func (m *Map) Len() int {
 // f will not be invoked for it, but if f inserts a map entry that
 // Iterate has not yet reached, whether or not f will be invoked for
 // it is unspecified.
-//
 func (m *Map) Iterate(f func(key types.Type, value interface{})) {
 	if m != nil {
 		for _, bucket := range m.table {
@@ -224,14 +219,12 @@ func (m *Map) toString(values bool) string {
 // String returns a string representation of the map's entries.
 // Values are printed using fmt.Sprintf("%v", v).
 // Order is unspecified.
-//
 func (m *Map) String() string {
 	return m.toString(true)
 }
 
 // KeysString returns a string representation of the map's key set.
 // Order is unspecified.
-//
 func (m *Map) KeysString() string {
 	return m.toString(false)
 }

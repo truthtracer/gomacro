@@ -20,20 +20,20 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/cosmos72/gomacro/imports"
+	"github.com/truthtracer/gomacro/imports"
 )
 
 type ImportMode int
 
 const (
 	// ImBuiltin import mechanism is:
-	// 1. write a file $GOPATH/src/github.com/cosmos72/gomacro/imports/$PKGPATH.go containing a single func init()
+	// 1. write a file $GOPATH/src/github.com/truthtracer/gomacro/imports/$PKGPATH.go containing a single func init()
 	//    i.e. *inside* gomacro sources
 	// 2. tell the user to recompile gomacro
 	ImBuiltin ImportMode = iota
 
 	// ImThirdParty import mechanism is the same as ImBuiltin, except that files are created in a thirdparty/ subdirectory:
-	// 1. write a file $GOPATH/src/github.com/cosmos72/gomacro/imports/thirdparty/$PKGPATH.go containing a single func init()
+	// 1. write a file $GOPATH/src/github.com/truthtracer/gomacro/imports/thirdparty/$PKGPATH.go containing a single func init()
 	//    i.e. *inside* gomacro sources
 	// 2. tell the user to recompile gomacro
 	ImThirdParty

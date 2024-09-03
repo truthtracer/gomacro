@@ -23,11 +23,11 @@ import (
 	"math/big"
 	r "reflect"
 
-	"github.com/cosmos72/gomacro/base/output"
+	"github.com/truthtracer/gomacro/base/output"
 
-	"github.com/cosmos72/gomacro/base/reflect"
-	"github.com/cosmos72/gomacro/base/untyped"
-	xr "github.com/cosmos72/gomacro/xreflect"
+	"github.com/truthtracer/gomacro/base/reflect"
+	"github.com/truthtracer/gomacro/base/untyped"
+	xr "github.com/truthtracer/gomacro/xreflect"
 )
 
 func (c *Comp) BasicLit(node *ast.BasicLit) *Expr {
@@ -308,7 +308,9 @@ func (e *Expr) To(c *Comp, t xr.Type) {
 // WithFun ensures that Expr.Fun is a closure that will return the expression result:
 //
 // if Expr is an untyped constant, WithFun converts the constant to its default type (panics on overflows),
-//    then sets Expr.Fun to a closure that will return such constant.
+//
+//	then sets Expr.Fun to a closure that will return such constant.
+//
 // if Expr is a typed constant, WithFun sets Expr.Fun to a closure that will return such constant.
 // if Expr is not a constant, WithFun does nothing (Expr.Fun must be set already)
 func (e *Expr) WithFun() I {

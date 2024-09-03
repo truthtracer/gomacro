@@ -20,7 +20,7 @@ import (
 	"fmt"
 	r "reflect"
 
-	"github.com/cosmos72/gomacro/base"
+	"github.com/truthtracer/gomacro/base"
 )
 
 type Env struct {
@@ -347,15 +347,15 @@ func CallInt(fun X, args ...X) XInt {
 }
 
 /*
-  interpreted version of:
+	  interpreted version of:
 
-	func sum(n int) int {
-		total := 0
-		for i := 1; i <= n; i++ {
-			total += i
+		func sum(n int) int {
+			total := 0
+			for i := 1; i <= n; i++ {
+				total += i
+			}
+			return total
 		}
-		return total
-	}
 */
 func DeclSum(env *Env, funcName string) FuncInt {
 	const (
@@ -380,14 +380,14 @@ func DeclSum(env *Env, funcName string) FuncInt {
 }
 
 /*
-  interpreted version of:
+	  interpreted version of:
 
-	func fibonacci(n int) int {
-		if (n <= 2) {
-			return 1
+		func fibonacci(n int) int {
+			if (n <= 2) {
+				return 1
+			}
+			return fibonacci(n-1) + fibonacci(n-2)
 		}
-		return fibonacci(n-1) + fibonacci(n-2)
-	}
 */
 func DeclFibonacci(env *Env, funcName string) FuncInt {
 	return DeclFuncInt(

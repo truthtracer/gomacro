@@ -21,8 +21,8 @@ import (
 	"go/token"
 	r "reflect"
 
-	. "github.com/cosmos72/gomacro/base"
-	"github.com/cosmos72/gomacro/base/reflect"
+	. "github.com/truthtracer/gomacro/base"
+	"github.com/truthtracer/gomacro/base/reflect"
 )
 
 // eval an interpreted function

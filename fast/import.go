@@ -24,13 +24,13 @@ import (
 	"strings"
 	"unsafe"
 
-	"github.com/cosmos72/gomacro/base"
-	"github.com/cosmos72/gomacro/base/genimport"
-	"github.com/cosmos72/gomacro/base/output"
-	"github.com/cosmos72/gomacro/base/paths"
-	"github.com/cosmos72/gomacro/base/reflect"
-	"github.com/cosmos72/gomacro/base/untyped"
-	xr "github.com/cosmos72/gomacro/xreflect"
+	"github.com/truthtracer/gomacro/base"
+	"github.com/truthtracer/gomacro/base/genimport"
+	"github.com/truthtracer/gomacro/base/output"
+	"github.com/truthtracer/gomacro/base/paths"
+	"github.com/truthtracer/gomacro/base/reflect"
+	"github.com/truthtracer/gomacro/base/untyped"
+	xr "github.com/truthtracer/gomacro/xreflect"
 )
 
 type PackageName = genimport.PackageName

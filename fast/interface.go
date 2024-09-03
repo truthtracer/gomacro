@@ -21,9 +21,9 @@ import (
 	"go/ast"
 	r "reflect"
 
-	"github.com/cosmos72/gomacro/base"
-	"github.com/cosmos72/gomacro/base/reflect"
-	xr "github.com/cosmos72/gomacro/xreflect"
+	"github.com/truthtracer/gomacro/base"
+	"github.com/truthtracer/gomacro/base/reflect"
+	xr "github.com/truthtracer/gomacro/xreflect"
 )
 
 type genericInterfaceReceiverType struct{}
@@ -191,10 +191,10 @@ func (c *Comp) converterToEmulatedInterface(tin, tout xr.Type) func(val xr.Value
 		} else if count > 1 {
 			c.Errorf("cannot convert from <%v> to <%v>: multiple methods match %s %s", tin, tout, mtdout.Name, mtdout.Type)
 		} else if mtdin.Type == nil {
-			c.Errorf("cannot convert from <%v> to <%v>: internal error, method %s of <%v> has nil type!\n\t(known bug under investigation, see https://github.com/cosmos72/gomacro/issues/139)",
+			c.Errorf("cannot convert from <%v> to <%v>: internal error, method %s of <%v> has nil type!\n\t(known bug under investigation, see https://github.com/truthtracer/gomacro/issues/139)",
 				tin, tout, mtdin.Name, tin)
 		} else if mtdout.Type == nil {
-			c.Errorf("cannot convert from <%v> to <%v>: internal error, method %s of <%v> has nil type!\n\t(known bug under investigation, see https://github.com/cosmos72/gomacro/issues/139)",
+			c.Errorf("cannot convert from <%v> to <%v>: internal error, method %s of <%v> has nil type!\n\t(known bug under investigation, see https://github.com/truthtracer/gomacro/issues/139)",
 				tin, tout, mtdout.Name, tout)
 		} else if !mtdin.Type.AssignableTo(mtdout.Type) {
 			c.Errorf("cannot convert from <%v> to <%v>: mismatched method %s: expecting %v, found %v",

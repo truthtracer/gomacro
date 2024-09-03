@@ -22,7 +22,7 @@
 package fast
 
 import (
-	xr "github.com/cosmos72/gomacro/xreflect"
+	xr "github.com/truthtracer/gomacro/xreflect"
 )
 
 func (c *Comp) callnret1(call *Call, maxdepth int) I {

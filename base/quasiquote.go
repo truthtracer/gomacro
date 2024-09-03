@@ -20,9 +20,9 @@ import (
 	"go/ast"
 	"go/token"
 
-	. "github.com/cosmos72/gomacro/ast2"
-	etoken "github.com/cosmos72/gomacro/go/etoken"
-	mp "github.com/cosmos72/gomacro/go/parser"
+	. "github.com/truthtracer/gomacro/ast2"
+	etoken "github.com/truthtracer/gomacro/go/etoken"
+	mp "github.com/truthtracer/gomacro/go/parser"
 )
 
 // SimplifyNodeForQuote unwraps ast.BlockStmt, ast.ExprStmt, ast.ParenExpr and ast.DeclStmt
@@ -170,10 +170,13 @@ func MakeNestedQuote(form AstWithNode, toks []token.Token, pos []token.Pos) AstW
 // we implement the same mechanics, so we must drill down to the last unquote/unquote_splice
 // and, for unquote_splice, create a copy of the unquote/unquote_splice stack for each result.
 // Example:
-//   x:=quote{7; 8}
-//   quasiquote{quasiquote{1; unquote{2}; unquote{unquote_splice{x}}}}
+//
+//	x:=quote{7; 8}
+//	quasiquote{quasiquote{1; unquote{2}; unquote{unquote_splice{x}}}}
+//
 // must return
-//   quasiquote{1; unquote{2}; unquote{7}; unquote{8}}
+//
+//	quasiquote{1; unquote{2}; unquote{7}; unquote{8}}
 func DuplicateNestedUnquotes(src UnaryExpr, depth int, toappend Ast) Ast {
 	if depth == 0 {
 		return toappend

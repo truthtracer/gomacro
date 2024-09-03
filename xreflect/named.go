@@ -20,9 +20,9 @@ import (
 	"go/token"
 	r "reflect"
 
-	"github.com/cosmos72/gomacro/go/etoken"
+	"github.com/truthtracer/gomacro/go/etoken"
 
-	"github.com/cosmos72/gomacro/go/types"
+	"github.com/truthtracer/gomacro/go/types"
 )
 
 // NamedOf returns a new named type for the given type name and package.

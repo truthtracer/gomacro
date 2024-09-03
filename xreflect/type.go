@@ -19,10 +19,10 @@ package xreflect
 import (
 	r "reflect"
 
-	"github.com/cosmos72/gomacro/go/types"
+	"github.com/truthtracer/gomacro/go/types"
 
-	"github.com/cosmos72/gomacro/go/etoken"
-	"github.com/cosmos72/gomacro/go/typeutil"
+	"github.com/truthtracer/gomacro/go/etoken"
+	"github.com/truthtracer/gomacro/go/typeutil"
 )
 
 func combineOpt(ts []Type) Option {
@@ -161,22 +161,23 @@ func (t *xtype) GoType() types.Type {
 
 // ReflectType returns a best-effort reflect.Type that approximates the type.
 // It may be inexact for the following reasons:
-// 1) missing reflect.NamedOf(): no way to programmatically create named types, or to access the underlying type of a named type
-// 2) missing reflect.InterfaceOf(): interface types created at runtime will be approximated by structs
-// 3) missing reflect.MethodOf(): method types created at runtime will be approximated by functions
-//    whose first parameter is the receiver
-// 4) reflect.StructOf() does not support embedded or unexported fields
-// 5) go/reflect lacks the ability to create self-referencing types:
-//    references to the type itself will be replaced by interface{}.
+//  1. missing reflect.NamedOf(): no way to programmatically create named types, or to access the underlying type of a named type
+//  2. missing reflect.InterfaceOf(): interface types created at runtime will be approximated by structs
+//  3. missing reflect.MethodOf(): method types created at runtime will be approximated by functions
+//     whose first parameter is the receiver
+//  4. reflect.StructOf() does not support embedded or unexported fields
+//  5. go/reflect lacks the ability to create self-referencing types:
+//     references to the type itself will be replaced by interface{}.
 //
 // Examples:
-//    after invoking at runtime type2.NewStruct() and type2.NewNamed()
-//    to create the following type:
-//        type List struct { Elem int; Rest *List }
-//    ReflectType will return a reflect.Type equivalent to:
-//        struct { Elem int; Rest interface{} }
-//    i.e. the type name will be missing due to limitation 1 above,
-//    and the field 'Rest' will have type interface{} instead of *List due to limitation 5.
+//
+//	after invoking at runtime type2.NewStruct() and type2.NewNamed()
+//	to create the following type:
+//	    type List struct { Elem int; Rest *List }
+//	ReflectType will return a reflect.Type equivalent to:
+//	    struct { Elem int; Rest interface{} }
+//	i.e. the type name will be missing due to limitation 1 above,
+//	and the field 'Rest' will have type interface{} instead of *List due to limitation 5.
 func (t *xtype) ReflectType() r.Type {
 	return t.rtype
 }

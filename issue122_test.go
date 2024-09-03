@@ -19,7 +19,7 @@ package main
 import (
 	"reflect"
 
-	"github.com/cosmos72/gomacro/imports"
+	"github.com/truthtracer/gomacro/imports"
 )
 
 type Base struct{}

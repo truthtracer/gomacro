@@ -23,8 +23,8 @@ import (
 	"strconv"
 	"strings"
 
-	. "github.com/cosmos72/gomacro/base"
-	bstrings "github.com/cosmos72/gomacro/base/strings"
+	. "github.com/truthtracer/gomacro/base"
+	bstrings "github.com/truthtracer/gomacro/base/strings"
 )
 
 func (env *Env) evalLiteral0(node *ast.BasicLit) interface{} {

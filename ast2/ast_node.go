@@ -20,7 +20,7 @@ import (
 	"go/ast"
 	"go/token"
 
-	"github.com/cosmos72/gomacro/go/etoken"
+	"github.com/truthtracer/gomacro/go/etoken"
 )
 
 func asInterface(x interface{}, isnil bool) interface{} {
@@ -37,9 +37,7 @@ func asNode(x ast.Node, isnil bool) ast.Node {
 	return x
 }
 
-//
 // .................. functions Interface() interface{}
-//
 func (x ArrayType) Interface() interface{}      { return asInterface(x.X, x.X == nil) }
 func (x AssignStmt) Interface() interface{}     { return asInterface(x.X, x.X == nil) }
 func (x BadDecl) Interface() interface{}        { return asInterface(x.X, x.X == nil) }
@@ -89,9 +87,7 @@ func (x TypeSwitchStmt) Interface() interface{} { return asInterface(x.X, x.X ==
 func (x UnaryExpr) Interface() interface{}      { return asInterface(x.X, x.X == nil) }
 func (x ValueSpec) Interface() interface{}      { return asInterface(x.X, x.X == nil) }
 
-//
 // .................. functions Node() ast.Node
-//
 func (x ArrayType) Node() ast.Node      { return asNode(x.X, x.X == nil) }
 func (x AssignStmt) Node() ast.Node     { return asNode(x.X, x.X == nil) }
 func (x BadDecl) Node() ast.Node        { return asNode(x.X, x.X == nil) }
@@ -141,9 +137,7 @@ func (x TypeSwitchStmt) Node() ast.Node { return asNode(x.X, x.X == nil) }
 func (x UnaryExpr) Node() ast.Node      { return asNode(x.X, x.X == nil) }
 func (x ValueSpec) Node() ast.Node      { return asNode(x.X, x.X == nil) }
 
-//
 // .................. functions Op() token.Token
-//
 func (x ArrayType) Op() token.Token  { return token.LBRACK }
 func (x AssignStmt) Op() token.Token { return x.X.Tok }
 func (x BadDecl) Op() token.Token    { return token.ILLEGAL }
@@ -211,9 +205,7 @@ func (x TypeSwitchStmt) Op() token.Token { return etoken.E_TYPESWITCH }
 func (x UnaryExpr) Op() token.Token      { return x.X.Op }
 func (x ValueSpec) Op() token.Token      { return token.VAR } // can be VAR or CONST
 
-//
 // .................. functions New() Ast
-//
 func (x ArrayType) New() Ast  { return ArrayType{&ast.ArrayType{Lbrack: x.X.Lbrack}} }
 func (x AssignStmt) New() Ast { return AssignStmt{&ast.AssignStmt{TokPos: x.X.TokPos, Tok: x.X.Tok}} }
 func (x BadDecl) New() Ast    { return BadDecl{&ast.BadDecl{From: x.X.From, To: x.X.To}} }
@@ -254,7 +246,9 @@ func (x ImportSpec) New() Ast {
 	return ImportSpec{&ast.ImportSpec{Doc: x.X.Doc, Comment: x.X.Comment, EndPos: x.X.EndPos}}
 }
 func (x IncDecStmt) New() Ast { return IncDecStmt{&ast.IncDecStmt{TokPos: x.X.TokPos, Tok: x.X.Tok}} }
-func (x IndexExpr) New() Ast  { return IndexExpr{&ast.IndexExpr{Lbrack: x.X.Lbrack, Rbrack: x.X.Rbrack}} }
+func (x IndexExpr) New() Ast {
+	return IndexExpr{&ast.IndexExpr{Lbrack: x.X.Lbrack, Rbrack: x.X.Rbrack}}
+}
 func (x InterfaceType) New() Ast {
 	return InterfaceType{&ast.InterfaceType{Interface: x.X.Interface, Incomplete: x.X.Incomplete}}
 }
@@ -264,17 +258,21 @@ func (x MapType) New() Ast      { return MapType{&ast.MapType{Map: x.X.Map}} }
 func (x Package) New() Ast {
 	return Package{&ast.Package{Name: x.X.Name, Scope: x.X.Scope, Imports: x.X.Imports}}
 }
-func (x ParenExpr) New() Ast { return ParenExpr{&ast.ParenExpr{Lparen: x.X.Lparen, Rparen: x.X.Rparen}} }
+func (x ParenExpr) New() Ast {
+	return ParenExpr{&ast.ParenExpr{Lparen: x.X.Lparen, Rparen: x.X.Rparen}}
+}
 func (x RangeStmt) New() Ast {
 	return RangeStmt{&ast.RangeStmt{For: x.X.For, TokPos: x.X.TokPos, Tok: x.X.Tok}}
 }
 func (x SelectStmt) New() Ast   { return SelectStmt{&ast.SelectStmt{Select: x.X.Select}} }
 func (x SelectorExpr) New() Ast { return SelectorExpr{&ast.SelectorExpr{}} }
 func (x SendStmt) New() Ast     { return SendStmt{&ast.SendStmt{Arrow: x.X.Arrow}} }
-func (x SliceExpr) New() Ast    { return SliceExpr{&ast.SliceExpr{Lbrack: x.X.Lbrack, Rbrack: x.X.Rbrack}} }
-func (x StarExpr) New() Ast     { return StarExpr{&ast.StarExpr{Star: x.X.Star}} }
-func (x StructType) New() Ast   { return StructType{&ast.StructType{Incomplete: x.X.Incomplete}} }
-func (x SwitchStmt) New() Ast   { return SwitchStmt{&ast.SwitchStmt{Switch: x.X.Switch}} }
+func (x SliceExpr) New() Ast {
+	return SliceExpr{&ast.SliceExpr{Lbrack: x.X.Lbrack, Rbrack: x.X.Rbrack}}
+}
+func (x StarExpr) New() Ast   { return StarExpr{&ast.StarExpr{Star: x.X.Star}} }
+func (x StructType) New() Ast { return StructType{&ast.StructType{Incomplete: x.X.Incomplete}} }
+func (x SwitchStmt) New() Ast { return SwitchStmt{&ast.SwitchStmt{Switch: x.X.Switch}} }
 func (x TypeAssertExpr) New() Ast {
 	return TypeAssertExpr{&ast.TypeAssertExpr{Lparen: x.X.Lparen, Rparen: x.X.Rparen}}
 }
@@ -285,9 +283,7 @@ func (x TypeSwitchStmt) New() Ast { return TypeSwitchStmt{&ast.TypeSwitchStmt{Sw
 func (x UnaryExpr) New() Ast      { return UnaryExpr{&ast.UnaryExpr{OpPos: x.X.OpPos, Op: x.X.Op}} }
 func (x ValueSpec) New() Ast      { return ValueSpec{&ast.ValueSpec{Doc: x.X.Doc, Comment: x.X.Comment}} }
 
-//
 // .................. functions Size() int
-//
 func (x ArrayType) Size() int    { return 2 }
 func (x AssignStmt) Size() int   { return 2 }
 func (x BadDecl) Size() int      { return 0 }
@@ -343,9 +339,7 @@ func (x TypeSwitchStmt) Size() int { return 3 }
 func (x UnaryExpr) Size() int      { return 1 }
 func (x ValueSpec) Size() int      { return 3 }
 
-//
 // .................. functions Get(int) Ast
-//
 func (x ArrayType) Get(i int) Ast { return ToAst2(i, x.X.Len, x.X.Elt) }
 func (x AssignStmt) Get(i int) Ast {
 	var slice []ast.Expr
@@ -511,9 +505,7 @@ func (x ValueSpec) Get(i int) Ast {
 	return nil
 }
 
-//
 // .................. functions Set(int, Ast)
-//
 func (x ArrayType) Set(i int, child Ast) {
 	expr := ToExpr(child)
 	if i == 0 {

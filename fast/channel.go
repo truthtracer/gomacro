@@ -25,8 +25,8 @@ import (
 	"go/ast"
 	r "reflect"
 
-	"github.com/cosmos72/gomacro/base/reflect"
-	xr "github.com/cosmos72/gomacro/xreflect"
+	"github.com/truthtracer/gomacro/base/reflect"
+	xr "github.com/truthtracer/gomacro/xreflect"
 )
 
 func (c *Comp) Recv(node *ast.UnaryExpr, xe *Expr) *Expr {

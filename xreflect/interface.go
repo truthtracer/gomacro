@@ -21,8 +21,8 @@ import (
 	r "reflect"
 	"sort"
 
-	"github.com/cosmos72/gomacro/go/etoken"
-	"github.com/cosmos72/gomacro/go/types"
+	"github.com/truthtracer/gomacro/go/etoken"
+	"github.com/truthtracer/gomacro/go/types"
 )
 
 func IsEmulatedInterface(t Type) bool {

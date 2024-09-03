@@ -21,7 +21,7 @@ import (
 	"go/token"
 	"strings"
 
-	"github.com/cosmos72/gomacro/base/output"
+	"github.com/truthtracer/gomacro/base/output"
 )
 
 func (f *fwdDeclList) add(decl *Decl) {

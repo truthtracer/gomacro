@@ -5,7 +5,7 @@
  	"unicode"
  	"unicode/utf8"
 +
-+	etoken "github.com/cosmos72/gomacro/go/etoken"
++	etoken "github.com/truthtracer/gomacro/go/etoken"
  )
  
  // An ErrorHandler may be provided to Scanner.Init. If a syntax error is

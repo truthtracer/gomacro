@@ -19,7 +19,7 @@ package classic
 import (
 	r "reflect"
 
-	. "github.com/cosmos72/gomacro/base"
+	. "github.com/truthtracer/gomacro/base"
 )
 
 // registerMethod registers a function value for the given receiver type recvType and method name.

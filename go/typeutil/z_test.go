@@ -12,9 +12,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cosmos72/gomacro/go/etoken"
+	"github.com/truthtracer/gomacro/go/etoken"
 
-	"github.com/cosmos72/gomacro/go/types"
+	"github.com/truthtracer/gomacro/go/types"
 )
 
 func fail(t *testing.T, actual interface{}, expected interface{}) {
@@ -51,23 +51,23 @@ func isidentical(t *testing.T, actual types.Type, expected types.Type) {
 
 func TestBasic(t *testing.T) {
 	names := []string{
-		types.Bool:       "bool",
-		types.Int:        "int",
-		types.Int8:       "int8",
-		types.Int16:      "int16",
-		types.Int32:      "int32",
-		types.Int64:      "int64",
-		types.Uint:       "uint",
-		types.Uint8:      "uint8",
-		types.Uint16:     "uint16",
-		types.Uint32:     "uint32",
-		types.Uint64:     "uint64",
-		types.Uintptr:    "uintptr",
-		types.Float32:    "float32",
-		types.Float64:    "float64",
-		types.Complex64:  "complex64",
-		types.Complex128: "complex128",
-		types.String:     "string",
+		types.Bool:        "bool",
+		types.Int:         "int",
+		types.Int8:        "int8",
+		types.Int16:       "int16",
+		types.Int32:       "int32",
+		types.Int64:       "int64",
+		types.Uint:        "uint",
+		types.Uint8:       "uint8",
+		types.Uint16:      "uint16",
+		types.Uint32:      "uint32",
+		types.Uint64:      "uint64",
+		types.Uintptr:     "uintptr",
+		types.Float32:     "float32",
+		types.Float64:     "float64",
+		types.Complex64:   "complex64",
+		types.Complex128:  "complex128",
+		types.String:      "string",
 		types.UntypedNilR: "", // highest index
 	}
 

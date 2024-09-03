@@ -19,9 +19,9 @@ package xreflect
 import (
 	r "reflect"
 
-	"github.com/cosmos72/gomacro/go/etoken"
-	"github.com/cosmos72/gomacro/go/types"
-	"github.com/cosmos72/gomacro/go/typeutil"
+	"github.com/truthtracer/gomacro/go/etoken"
+	"github.com/truthtracer/gomacro/go/types"
+	"github.com/truthtracer/gomacro/go/typeutil"
 )
 
 type depthMap struct {

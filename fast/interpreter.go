@@ -24,11 +24,11 @@ import (
 	"os"
 	r "reflect"
 
-	"github.com/cosmos72/gomacro/base"
-	"github.com/cosmos72/gomacro/base/paths"
-	"github.com/cosmos72/gomacro/gls"
-	"github.com/cosmos72/gomacro/go/types"
-	xr "github.com/cosmos72/gomacro/xreflect"
+	"github.com/truthtracer/gomacro/base"
+	"github.com/truthtracer/gomacro/base/paths"
+	"github.com/truthtracer/gomacro/gls"
+	"github.com/truthtracer/gomacro/go/types"
+	xr "github.com/truthtracer/gomacro/xreflect"
 )
 
 // Interp is the fast interpreter.
@@ -142,6 +142,10 @@ func (ir *Interp) SetInspector(inspector base.Inspector) {
 
 func (ir *Interp) SetDebugger(debugger Debugger) {
 	ir.env.Run.Debugger = debugger
+}
+
+func (ir *Interp) SetBuildArgs(args []string) {
+	ir.Comp.Importer.BuildArgs = args
 }
 
 func (ir *Interp) Interrupt(os.Signal) {

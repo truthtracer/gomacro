@@ -16,16 +16,15 @@ const sep = string(os.PathSeparator)
 //
 // To use, add a comment to one go file in your package:
 //
-//`//go:generate gomacro -g .`
+// `//go:generate gomacro -g .`
 //
 // to import the current dir; or one like
 //
-//`//go:generate gomacro -g github.com/cosmos72/gomacro/classic`
+// `//go:generate gomacro -g github.com/truthtracer/gomacro/classic`
 //
 // to specify the exact import path. The second, specific
 // form, may be necessary if we cannot detect the GOPATH
 // environment variable.
-//
 func GoGenerateMain(arg []string, imp *Importer) error {
 	var path string
 	narg := len(arg)

@@ -22,10 +22,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/cosmos72/gomacro/base/paths"
+	"github.com/truthtracer/gomacro/base/paths"
 
-	"github.com/cosmos72/gomacro/base"
-	bstrings "github.com/cosmos72/gomacro/base/strings"
+	"github.com/truthtracer/gomacro/base"
+	bstrings "github.com/truthtracer/gomacro/base/strings"
 )
 
 // ====================== Cmd ==============================
@@ -37,19 +37,21 @@ import (
 // note that Interp.Eval() does **not** look for special commands!
 //
 // Cmd.Name is the command name **without** the initial ':'
-//   it must be a valid Go identifier and must not be empty.
-//   Using a reserved Go keyword (const, for, func, if, package, return, switch, type, var...)
-//   or predefined identifier (bool, int, rune, true, false, nil...)
-//   is a bad idea because it interferes with gomacro preprocessor mode.
-//   Current limitation: Cmd.Name[0] must be ASCII.
+//
+//	it must be a valid Go identifier and must not be empty.
+//	Using a reserved Go keyword (const, for, func, if, package, return, switch, type, var...)
+//	or predefined identifier (bool, int, rune, true, false, nil...)
+//	is a bad idea because it interferes with gomacro preprocessor mode.
+//	Current limitation: Cmd.Name[0] must be ASCII.
 //
 // Cmd.Help is the help string that will be displayed by :help
-//   please look at current :help output and use the same layout if possible.
+//
+//	please look at current :help output and use the same layout if possible.
 //
 // Cmd.Func is the command implementation. it receives as arguments:
 //   - the current Interp object,
 //   - the (possibly multi-line) argument string typed by the user
-//     note: it will always have balanced amounts of {} [] () '' "" and ``
+//     note: it will always have balanced amounts of {} [] () ” "" and “
 //   - the current command options
 //
 // Cmd.Func can perform any action desired by the implementor,
@@ -61,11 +63,12 @@ import (
 //     return the received 'opt' argument unless you need to update it.
 //
 // If Cmd.Func needs to print something, it's recommended to use
-//      g := &interp.Comp.Globals
-//      g.Fprintf(g.Stdout, FORMAT, ARGS...)
-//   instead of the various fmt.*Print* functions, in order to
-//   pretty-print interpreter-generated objects (g.Fprintf)
-//   and to honour configured redirections (g.Stdout)
+//
+//	   g := &interp.Comp.Globals
+//	   g.Fprintf(g.Stdout, FORMAT, ARGS...)
+//	instead of the various fmt.*Print* functions, in order to
+//	pretty-print interpreter-generated objects (g.Fprintf)
+//	and to honour configured redirections (g.Stdout)
 //
 // To register a new special command, use Commands.Add()
 // To unregister an existing special command, use Commands.Del()
@@ -335,7 +338,7 @@ func (ir *Interp) cmdEnv(arg string, opt base.CmdOpt) (string, base.CmdOpt) {
 
 func (ir *Interp) cmdCopyright(arg string, opt base.CmdOpt) (string, base.CmdOpt) {
 	g := &ir.Comp.Globals
-	g.Fprintf(g.Stdout, `// Copyright (C) 2018-2020 Massimiliano Ghilardi <https://github.com/cosmos72/gomacro>
+	g.Fprintf(g.Stdout, `// Copyright (C) 2018-2020 Massimiliano Ghilardi <https://github.com/truthtracer/gomacro>
 // License MPL v2.0+: Mozilla Public License version 2.0 or later <http://mozilla.org/MPL/2.0/>
 // This is free software with ABSOLUTELY NO WARRANTY.
 `)

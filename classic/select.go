@@ -21,7 +21,7 @@ import (
 	"go/token"
 	r "reflect"
 
-	. "github.com/cosmos72/gomacro/base"
+	. "github.com/truthtracer/gomacro/base"
 )
 
 type selectLhsExpr struct {

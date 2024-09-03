@@ -22,7 +22,7 @@ import (
 	r "reflect"
 	"sort"
 
-	xr "github.com/cosmos72/gomacro/xreflect"
+	xr "github.com/truthtracer/gomacro/xreflect"
 )
 
 type selectEntry struct {
